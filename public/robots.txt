@@ -1,0 +1,4 @@
+# Hello curious crawler!
+# You’re not supposed to be here... unless you’re hiring.
+# Resume: https://yourgithub.io/resume
+# Let’s make the web safer together :)
