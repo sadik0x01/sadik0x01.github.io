@@ -1,0 +1,57 @@
+Prompt Google
+"Create a Vapor-tech, dark-themed web page titled 'Google Dork by sadik0x01'.
+"Design a web page for a 'Dork Engine' tool. It should have a clean, modern interface with a prominent input field for a target domain.
+Below the input, arrange a grid of buttons, each representing a specific Google Dork query. When a user clicks a button,
+the corresponding Dork should open in a new tab, automatically substituting 'example.com' with the user-provided domain.
+Include a separate section for 'Bug Bounty Dorks' with buttons that directly link to pre-defined Google searches.
+The website should also feature a toggle for dark and light mode. The color scheme should be professional and easy on the eyes,
+featuring dark backgrounds, subtle accents, and light text. Include a small attribution to 'Voizok' in the footer."
+
+Prompt For Github
+"Create a sleek, dark-themed web page titled 'Github Dork by sadik0x01'.
+The background should feature a dynamic, particle-based animation (particles-js) and a cover-sized background image (github/b2.jpg) for a modern,
+slightly mysterious feel. The main title and author attribution should be centered, large, and styled with a vibrant, multi-layered text shadow/glow effect
+(e.g., #4a2aa8, #4e1e9c, #1f10a7 for the main title, and #aeda11, #ad7c10, #9dd123 for the author). Include a prominent, centered input field
+for a 'Target Domain' ("site" or org:target), which has a transparent background, white text, and a subtle border that glows on focus. Below this,
+arrange a clear two-column layout of clickable dork links. Each link should be prefixed with a magnifying glass emoji (🔍), use white text that changes to a distinct hover color
+(e.g., #d04834), and dynamically open a GitHub search (e.g., github.com/search?q=) in a new tab, incorporating the user-provided domain and the specific dork query.
+The page should primarily use the 'Merienda One' font for titles and a clean sans-serif for other text. A small footer crediting 'sadik0x01;
+thank to faisalahmed google dorks' should be present, styled to match the main titles."
+
+Prompt For Shodan
+"Create a retro-futuristic web page titled 'Shodan Dork by sadik0x01'.
+The background should feature a dynamic, particle-based animation reminiscent of old-school hacking interfaces,
+with a large, cover-fitting image (e.g., 'shodan/p.jpg'). The main title should be large, centered, and have a strong red glow/shadow effect.
+Below it, add a smaller author attribution with the same style. Include a central input field for a 'Target Domain' (e.g., org:'google'),
+styled to blend with the retro theme (transparent background, white text, glowing red border). Arrange a two-column layout of clickable dork links,
+each prefixed with a magnifying glass emoji and using a similar glowing red text style. Ensure these links dynamically
+open Shodan searches based on the user's input, replacing a placeholder (e.g., 'target') with the provided domain.
+The page should use the 'Merienda One' font for titles and a clean sans-serif for the main content. Include a small footer crediting 'sadik0x01;
+thank to faisalahmed google dorks' with the same retro styling. The overall theme should be dark with neon accents."
+
+Prompt For Bug Bounty Dorks
+"Create a Steampunk web page titled 'Bug Bounty Dorks by sadik0x01'.
+"Design a web page for a 'Dork Engine' tool with a clean, modern,
+and adaptive interface. It should feature a prominent input field for a target domain,
+which dynamically replaces 'example.com' in the dork queries. Below this input,
+create a grid of buttons, each representing a specific Google Dork query related to bug bounty reconnaissance
+(e.g., 'Directory listing vulnerabilities', 'Exposed Configuration files', 'WordPress'). When clicked,
+these buttons should open the corresponding Google search in a new tab, incorporating the user-provided domain.
+Additionally, include a distinct 'Bug Bounty Dorks' section with another set of buttons that directly link to pre-defined
+Google searches for common bug bounty terms (e.g., inurl:"/bug bounty", site:.gov. "responsible disclosure").
+The page needs a theme toggle (dark/light mode switch) in the header to adapt the color scheme professionally and ergonomically,
+favoring dark backgrounds, subtle highlights, and light text for the dark mode. A small attribution to 'Voizok' should be present in the footer."
+
+Prompt For Recon Methodology
+"Create a Vintage futurism web page titled 'Recon Methodology by sadik0x01'.
+"Design an 'Advanced Bug Hunting Toolkit - Recon' web page with a highly stylized,
+dark cyber-themed interface. The background should feature dynamic visual effects,
+including a subtle, animated neon-green grid overlay and a 'matrix rain' effect, providing depth and a futuristic feel.
+The color palette should predominantly use neon green, dark grays, and black. A fixed header should display the tool's title,
+a spider logo with a glowing effect, and a central 'Enter domain to recon...' input field, which has a sleek,
+illuminated border and updates with domain validation. The main content area should present a grid of distinct
+'Card' components, each representing a reconnaissance category (e.g., 'Subdomain Enumeration', 'Secret Discovery',
+'Passive Reconnaissance'). Each card should have a clear title with an icon, and a scrollable list of 'tool actions' (buttons).
+These buttons, when clicked, should open external reconnaissance tools or Google Dork searches in new tabs, dynamically inserting the user-provided domain
+(e.g., 'example.com'). Each button should also include an 'Active' status badge. The entire interface should be responsive,
+feature subtle animations on card load and button hover, and include a fixed, minimalist footer with navigation back to a 'Main' page. This is the default dark mode."
