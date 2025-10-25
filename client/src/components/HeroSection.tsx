@@ -4,6 +4,7 @@ import { SiHackthebox } from "react-icons/si";
 import { Mail } from "lucide-react";
 import ParticlesBackground from "./ParticlesBackground";
 import { Button } from "@/components/ui/button";
+import profileImage from "/profile.jpg";
 
 const socialLinks = [
   { icon: FaTwitter, url: "https://x.com/sadik0x01", label: "Twitter/X" },
@@ -24,7 +25,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
         <div className="mb-8">
           <img
-            src="/profile.jpg"
+            src={profileImage}
             alt="Sadik Mahmud Profile"
             className="w-48 h-48 mx-auto rounded-full border-4 border-primary shadow-2xl animate-pulse-glow object-cover"
             data-testid="img-profile"
