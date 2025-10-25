@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router as WouterRouter } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -12,17 +12,22 @@ import BugBountyDorks from "@/pages/BugBountyDorks";
 import ReconMethodology from "@/pages/ReconMethodology";
 import NotFound from "@/pages/not-found";
 
+// Get the base path from environment or default to root
+const basePath = import.meta.env.BASE_URL || '/';
+
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/google-dorks" component={GoogleDorks} />
-      <Route path="/github-dorks" component={GitHubDorks} />
-      <Route path="/shodan-dorks" component={ShodanDorks} />
-      <Route path="/bug-bounty-dorks" component={BugBountyDorks} />
-      <Route path="/recon-methodology" component={ReconMethodology} />
-      <Route component={NotFound} />
-    </Switch>
+    <WouterRouter base={basePath}>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/google-dorks" component={GoogleDorks} />
+        <Route path="/github-dorks" component={GitHubDorks} />
+        <Route path="/shodan-dorks" component={ShodanDorks} />
+        <Route path="/bug-bounty-dorks" component={BugBountyDorks} />
+        <Route path="/recon-methodology" component={ReconMethodology} />
+        <Route component={NotFound} />
+      </Switch>
+    </WouterRouter>
   );
 }
 
