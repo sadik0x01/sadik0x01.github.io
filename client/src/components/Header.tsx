@@ -10,14 +10,14 @@ export default function Header() {
   const [location] = useLocation();
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/#about" },
-    { name: "Skills", path: "/#skills" },
-    { name: "Achievements", path: "/#achievements" },
-    { name: "Certifications", path: "/#certifications" },
-    { name: "Writeups", path: "/#writeups" },
-    { name: "Security Tools", path: "/#tools" },
-    { name: "Contact", path: "/#contact" },
+    { name: "Home", path: "/", isLink: true },
+    { name: "About", path: "#about", isLink: false },
+    { name: "Skills", path: "#skills", isLink: false },
+    { name: "Achievements", path: "#achievements", isLink: false },
+    { name: "Certifications", path: "#certifications", isLink: false },
+    { name: "Writeups", path: "#writeups", isLink: false },
+    { name: "Security Tools", path: "#tools", isLink: false },
+    { name: "Contact", path: "#contact", isLink: false },
   ];
 
   return (
@@ -32,14 +32,25 @@ export default function Header() {
 
           <nav className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors hover-elevate rounded-md"
-                data-testid={`nav-${item.name.toLowerCase().replace(" ", "-")}`}
-              >
-                {item.name}
-              </Link>
+              item.isLink ? (
+                <Link
+                  key={item.name}
+                  href={item.path}
+                  className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors hover-elevate rounded-md"
+                  data-testid={`nav-${item.name.toLowerCase().replace(" ", "-")}`}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.path}
+                  className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors hover-elevate rounded-md"
+                  data-testid={`nav-${item.name.toLowerCase().replace(" ", "-")}`}
+                >
+                  {item.name}
+                </a>
+              )
             ))}
           </nav>
 
@@ -79,15 +90,27 @@ export default function Header() {
         <div className="md:hidden border-t border-border bg-card">
           <nav className="px-4 py-4 space-y-2">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-                data-testid={`mobile-nav-${item.name.toLowerCase().replace(" ", "-")}`}
-              >
-                {item.name}
-              </Link>
+              item.isLink ? (
+                <Link
+                  key={item.name}
+                  href={item.path}
+                  className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                  data-testid={`mobile-nav-${item.name.toLowerCase().replace(" ", "-")}`}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.path}
+                  className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                  data-testid={`mobile-nav-${item.name.toLowerCase().replace(" ", "-")}`}
+                >
+                  {item.name}
+                </a>
+              )
             ))}
           </nav>
         </div>
