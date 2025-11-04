@@ -18,6 +18,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Only run for portfolio1 repository, not for username.github.io
+    if: github.repository != 'sadik0x01/sadik0x01.github.io'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
