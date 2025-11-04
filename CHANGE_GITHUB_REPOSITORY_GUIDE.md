@@ -196,9 +196,15 @@ origin  https://github.com/yourusername/repository-name.git (push)
 
 **You need to update the base path in your deployment workflow file.**
 
-The base path is the repository name in the GitHub Pages URL. For example:
+The base path depends on your repository name:
+
+**For Regular Repositories:**
 - Repository: `my-portfolio` → URL: `https://username.github.io/my-portfolio/`
 - Base path should be: `/my-portfolio/`
+
+**For Root Domain Repositories (`username.github.io`):**
+- Repository: `username.github.io` → URL: `https://username.github.io`
+- Base path should be: `/`
 
 **Find and edit this file:** `.github/workflows/deploy.yml`
 
@@ -207,17 +213,22 @@ The base path is the repository name in the GitHub Pages URL. For example:
 VITE_BASE_PATH: '/portfolio1/'
 ```
 
-**Change it to your new repository name:**
-```yaml
-VITE_BASE_PATH: '/your-new-repo-name/'
-```
+**Change it based on your repository:**
+- Regular repo: `VITE_BASE_PATH: '/your-new-repo-name/'`
+- Root domain repo: `VITE_BASE_PATH: '/'`
+
+**If you have multiple remotes with different base paths:**
+- Create a separate workflow file: `.github/workflows/deploy-root.yml` for root domain
+- Keep `.github/workflows/deploy.yml` for regular repositories
+- Each will use the appropriate base path
 
 **Important:** 
-- Include the forward slashes: `/` at the start and end
+- Include the forward slashes: `/` at the start and end for regular repos
+- Use `/` only for root domain repos (`username.github.io`)
 - If your repository name has spaces, use hyphens instead
 - Example: Repository `my portfolio` → Use `/my-portfolio/`
 
-**Save the file.**
+**Save the file(s).**
 
 ---
 
@@ -405,8 +416,12 @@ git remote add origin https://github.com/yourusername/repo-name.git
 - If you use a custom domain (e.g., `www.yourname.com`), set base path to `/`
 
 **For Root GitHub Pages (username.github.io):**
-- Repository must be named: `username.github.io`
+- Repository must be named: `username.github.io` (exactly your GitHub username)
 - Base path should be: `/`
+- Your site will be available at: `https://username.github.io` (no `/repo-name/` path)
+- This is special - GitHub automatically serves this at the root domain
+- You can have both a regular repo (e.g., `portfolio1`) and a root domain repo (`username.github.io`)
+- Use separate workflow files for each (see "Multiple Remotes" section below)
 
 ### Repository Naming Best Practices
 
@@ -433,11 +448,39 @@ If you want to push to multiple repositories:
 # Add multiple remotes with different names
 git remote add origin https://github.com/user1/repo1.git
 git remote add backup https://github.com/user2/repo2.git
+git remote add github-io https://github.com/username/username.github.io.git
 
 # Push to specific remote
 git push origin main
 git push backup main
+git push github-io main
 ```
+
+**When adding a remote that already has content:**
+
+If the remote repository already has files, you'll need to merge first:
+
+```bash
+# Fetch the remote content
+git fetch remote-name
+
+# Pull and merge (allows unrelated histories)
+git pull remote-name main --allow-unrelated-histories
+
+# Then push
+git push remote-name main
+```
+
+**Multiple Workflows for Different Deployments:**
+
+If you have multiple remotes with different base paths (e.g., one with `/repo-name/` and one with `/`), you can create separate workflow files:
+
+- `.github/workflows/deploy.yml` - For regular repositories (e.g., `portfolio1`)
+  - Uses base path: `/portfolio1/`
+- `.github/workflows/deploy-root.yml` - For `username.github.io` repositories
+  - Uses base path: `/`
+
+Each workflow will automatically run when you push to the corresponding repository.
 
 ---
 
